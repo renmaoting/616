@@ -1,0 +1,7 @@
+This directory will contain the frames generated to make a video.
+You should test your frame generation to make sure that it works,
+but do not submit a project with the frames generated because
+the aggregation  of submissions will be too large.
+
+Therefore, include in your Makefile a facility to clean this
+directory, and make sure you "make clean" before you submit.

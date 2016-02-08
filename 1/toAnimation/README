@@ -1,0 +1,16 @@
+This directory is intended as a gradual introduction to animation
+using the Simple DirectMedia Layer (SDL).
+
+The usual progression for viewing the files in the directories should be:
+  (1) blit -- just a simple demo of blitting
+  (2) drawOn -- blitting a sprite onto another sprite
+  (3) cpuAnim -- an animation that uses the cpu clock rather than
+      the SDL game clock.
+  (4) gameClockAnim -- this animation uses the distance formula, 
+      and the SDL game clock to generate a smooth animation that
+      runs the same on all platforms and computers.
+  (5) smoothAnim -- this one's the best
+
+To make a video from a list of frames:
+
+avconv -r 60 -i username.%4d.bmp username.mp4
