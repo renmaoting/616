@@ -7,6 +7,7 @@
 
 #include "ioManager.h"
 #include <iostream>
+#include <SDL_image.h>
 
 IoManager& IoManager::getInstance()
 {
@@ -21,7 +22,8 @@ IoManager::~IoManager()
 
 SDL_Surface* IoManager::loadImage(const std::string& filename, bool setColorKey)
 {
-    SDL_Surface *temp = SDL_LoadBMP(filename.c_str());
+//    SDL_Surface *temp = SDL_LoadBMP(filename.c_str());
+    SDL_Surface *temp = IMG_Load(filename.c_str());
     if (temp == NULL) 
         throw std::string("Unable to load bitmap.")+SDL_GetError();
     if ( setColorKey )

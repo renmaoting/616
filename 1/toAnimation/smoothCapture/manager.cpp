@@ -9,7 +9,7 @@
 
 Manager::Manager():screen(IoManager::getInstance().getScreen()),
     genFrames(new GenerateFrames(screen)),
-    world(new World("images/sky.bmp")),
+    world(new World("images/sky.jpg")),
     star(new Sprite("images/redstar32.bmp", 0, 300))    
 {}
 
