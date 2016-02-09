@@ -10,7 +10,7 @@
 Manager::Manager():screen(IoManager::getInstance().getScreen()),
     genFrames(new GenerateFrames(screen)),
     world(new World("images/sky.jpg")),
-    star(new Sprite("images/redstar32.bmp", 0, 300))    
+    star(new Sprite("images/comet.png", rand()%1200, 0))    
 {}
 
 Manager::~Manager()
@@ -34,9 +34,7 @@ bool Manager::update()
     currentTicks = SDL_GetTicks();
     unsigned int elapsedTicks = currentTicks - prevTicks + remainder; 
     if( elapsedTicks < 17u) return false; 
-
-    if(star->X() + star->W() <= world->getWidth())  
-        star->update();
+    star->update();
     prevTicks = currentTicks;
     remainder = elapsedTicks - 17u; // ***
     return true;
@@ -51,7 +49,6 @@ void Manager::play()
     SDL_Event event;
     bool makeVideo = false;
     bool done = false;
-    bool freshFrame = false; // ***
     GenerateFrames genFrames(screen);
     while(!done)
     {
@@ -64,18 +61,13 @@ void Manager::play()
             if (event.key.keysym.sym == SDLK_F4)
                 makeVideo = true;
         }
-        if(star->X() + star->W() <= world->getWidth())  
-            freshFrame = update();
-        else
+        if(makeVideo && genFrames.getFrameCount() < 200)  
+            genFrames.makeFrame();
+        else if(makeVideo && genFrames.getFrameCount() >= 200)
             makeVideo = false;
 
-        if(freshFrame)
-        {
-            freshFrame=false;
-            if( makeVideo ) 
-                genFrames.makeFrame();
-        }
         SDL_Flip(screen);
+        update();
         draw();
     }
 }

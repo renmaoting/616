@@ -24,7 +24,8 @@ void Sprite::draw() const
 void Sprite::update()
 {
     float incr = velocityX * 17u * 0.001; 
-    x += incr;
+    x -= incr;
+    y += incr*0.5;
 }
 
 

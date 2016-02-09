@@ -26,13 +26,11 @@ public:
     int Y() { return y;}
 
 private:
-
-    Frame *frame;
-    int width;
-    int height;
-    float x;
-    float y;
-    int velocityX;
+    Frame*  frame;
+    int     width;
+    int     height;
+    float   x;
+    float   y;
+    int     velocityX;
 };
-
 #endif

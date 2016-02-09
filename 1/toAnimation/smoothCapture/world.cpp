@@ -14,8 +14,8 @@ World::~World()
 
 World::World(const std::string& name):
     frame(new Frame(name)),
-    width(1000),
-    height(800)
+    width(1200),
+    height(750)
 {}
 
 void  World::draw()const

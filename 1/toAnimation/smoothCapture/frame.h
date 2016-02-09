@@ -22,10 +22,10 @@ public:
     void draw(int x, int y);
 
 private:
-    SDL_Surface * screen;
-    SDL_Surface * surface;
-    int width;
-    int height;
+    SDL_Surface*    screen;
+    SDL_Surface*    surface;
+    int             width;
+    int             height;
 
     Frame();
 };

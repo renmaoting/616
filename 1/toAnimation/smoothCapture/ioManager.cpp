@@ -37,7 +37,7 @@ SDL_Surface* IoManager::loadImage(const std::string& filename, bool setColorKey)
 }
 
 IoManager::IoManager():
-    screen(SDL_SetVideoMode(854u, 480, 0, SDL_DOUBLEBUF))//TODO
+    screen(SDL_SetVideoMode(1200, 750, 32, SDL_DOUBLEBUF))//TODO
 {
     if (screen == NULL) 
         throw std::string("Unable to set video mode: ")+SDL_GetError(); 
