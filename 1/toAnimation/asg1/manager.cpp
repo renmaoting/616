@@ -56,7 +56,7 @@ void Manager::play()
     atexit(SDL_Quit);
 
     SDL_Event event;
-    bool makeVideo = true;
+    bool makeVideo = false;
     bool done = false;
     GenerateFrames genFrames(screen);
     while(!done)

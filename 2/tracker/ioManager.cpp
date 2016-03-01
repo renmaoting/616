@@ -111,35 +111,4 @@ void IOManager::buildString(SDL_Event event) {
   }
 }
 
-template <typename T>
-void IOManager::printMessageValueAt(const std::string& msg, T value, 
-     Sint16 x, Sint16 y) const {
-   std::stringstream strm;
-   std::string message = msg;
-   strm << message << value << "\0";
-   message = strm.str();
-   SDL_Rect dest = {x,y,0,0};
-   SDL_Surface *stext = 
-       TTF_RenderText_Blended(font, message.c_str(), color);
-   if (stext) {
-     SDL_BlitSurface( stext, NULL, screen, &dest );
-     SDL_FreeSurface(stext);
-   }
-   else {
-     throw 
-     std::string("Couldn't allocate text sureface in printMessageValueAt");
-   }
-}
-
-template void IOManager::
-printMessageValueAt(const std::string& msg, unsigned long, Sint16, Sint16) const;
-
-template void IOManager::
-printMessageValueAt(const std::string& msg, float, Sint16, Sint16) const;
-
-template void IOManager::
-printMessageValueAt(const std::string& msg, unsigned int, Sint16, Sint16) const;
-
-template void IOManager::
-printMessageValueAt(const std::string& msg, int, Sint16, Sint16) const;
 

@@ -24,7 +24,21 @@ public:
 
   template <typename T>
   void printMessageValueAt(const std::string& msg, T value, 
-         Sint16 x, Sint16 y) const;
+        Sint16 x, Sint16 y) const{
+        std::stringstream strm;
+        std::string message = msg;
+        strm << message << value << "\0";
+        message = strm.str();
+        SDL_Rect dest = {x,y,0,0};
+        SDL_Surface *stext = 
+            TTF_RenderText_Blended(font, message.c_str(), color);
+        if (stext) {
+            SDL_BlitSurface( stext, NULL, screen, &dest );
+            SDL_FreeSurface(stext);
+        }
+        else throw 
+            std::string("Couldn't allocate text sureface in printMessageValueAt");
+  }
 
   void buildString(SDL_Event);
   void clearString() { inputString = ""; }

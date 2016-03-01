@@ -79,7 +79,7 @@ void Clock::toggleSloMo() {
 unsigned int Clock::getTicks() const { 
   if ( sloMo ) return 1;
   if(paused) return 0;
-  else return SDL_GetTicks() - timeAtStart-pausedSpan; 
+  else return SDL_GetTicks() - timeAtStart; 
 }
 
 unsigned int Clock::getElapsedTicks() { 
@@ -87,7 +87,14 @@ unsigned int Clock::getElapsedTicks() {
   if(paused == true) return 0;
 
   currTicks = getTicks();
-  ticks = currTicks-prevTicks;
+  if(pausedSpan)
+  {
+    ticks = 1000.0/frameCap+0.5;
+    pausedSpan = 0;
+  }
+  else
+    ticks = currTicks-prevTicks;
+  pausedSpan = 0;
   unsigned int delay = capFrameRate();
   prevTicks = currTicks + delay;
   ticks += delay;
