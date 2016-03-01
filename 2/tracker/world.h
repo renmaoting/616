@@ -14,6 +14,7 @@ private:
   Frame* const frame;
   int factor;
   unsigned frameWidth;
+  unsigned frameHeight;
   unsigned worldWidth;
   float viewX;
   float viewY;

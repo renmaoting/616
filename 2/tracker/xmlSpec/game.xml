@@ -22,13 +22,22 @@
 </view>
 
 <back>
-  <file>images/checkerboard.bmp</file>
+  <file>images/ocean.png</file>
   <red>193</red>
   <green>205</green>
   <blue>205</blue>
   <factor>1</factor>
   <transparency>false</transparency>
 </back>
+
+<back2>
+  <file>images/hill.png</file>
+  <red>193</red>
+  <green>205</green>
+  <blue>205</blue>
+  <factor>2</factor>
+  <transparency>false</transparency>
+</back2>
 
 <font name="font">
   <file>font/dyslexic-bold.otf</file>
