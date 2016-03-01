@@ -58,6 +58,22 @@
   <transparency>true</transparency>
 </spinstar>
 
+<fish4>
+  <file>images/fish4m.png</file>
+  <startLoc x="520" y="40"/>
+
+  <frames>16</frames>
+  <frameInterval>150</frameInterval>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>77</width>
+  <height>59</height>
+  <speedX>150</speedX>
+  <speedY>150</speedY>
+  <transparency>true</transparency>
+</fish4>
+
 <star>
   <file>images/yellowstar32.png</file>
   <startLoc x="320" y="240"/>
