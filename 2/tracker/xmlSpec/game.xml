@@ -12,17 +12,17 @@
 <username>malloy</username>
 
 <world>
-    <width>2000</width>
-    <height>960</height>
+    <width>2800</width>
+    <height>800</height>
 </world>
 
 <view>
-  <width>854</width>
-  <height>480</height>
+  <width>1200</width>
+  <height>800</height>
 </view>
 
 <back>
-  <file>images/ocean.png</file>
+  <file>images/b_bg.jpg</file>
   <red>193</red>
   <green>205</green>
   <blue>205</blue>
@@ -31,12 +31,12 @@
 </back>
 
 <back2>
-  <file>images/hill.png</file>
+  <file>images/bg.png</file>
   <red>193</red>
   <green>205</green>
   <blue>205</blue>
   <factor>2</factor>
-  <transparency>false</transparency>
+  <transparency>true</transparency>
 </back2>
 
 <font name="font">
