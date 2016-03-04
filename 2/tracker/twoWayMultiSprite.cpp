@@ -23,11 +23,11 @@ TwoWayMultiSprite::TwoWayMultiSprite( const std::string& name) :
   Drawable(name, 
            Vector2f(Gamedata::getInstance().getXmlInt(name+"/startLoc/x") , 
                     Gamedata::getInstance().getXmlInt(name+"/startLoc/y") ), 
-           Vector2f(Gamedata::getInstance().getXmlInt(name+"/speedX") + rand()%30,
+           Vector2f(Gamedata::getInstance().getXmlInt(name+"/speedX") ,
                     Gamedata::getInstance().getXmlInt(name+"/speedY") )
            ),
   explosion(NULL),
-  frames( FrameFactory::getInstance().getFrames(name)),
+  frames( FrameFactory::getInstance().getFrames2(name)),
   starFrames(),
   frameName(name),
   worldWidth(Gamedata::getInstance().getXmlInt("world/width")),

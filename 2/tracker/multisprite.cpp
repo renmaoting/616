@@ -50,4 +50,22 @@ void MultiSprite::draw() const {
 
 void MultiSprite::update(Uint32 ticks) { 
   advanceFrame(ticks);
+  Vector2f incr = getVelocity() * static_cast<float>(ticks) * 0.001;
+  setPosition(getPosition() + incr);
+
+  if ( Y() < 0) {
+    velocityY( abs( velocityY() ) );
+  }
+  if ( Y() > worldHeight-frameHeight) {
+    velocityY( -abs( velocityY() ) );
+  }
+
+  if ( X() < 0) {
+    velocityX( abs( velocityX() ) );
+  }
+  if ( X() > worldWidth-frameWidth) {
+    velocityX( -abs( velocityX() ) );
+  }  
+
+
 }

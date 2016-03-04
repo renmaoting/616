@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "drawable.h"
+#include "multisprite.h"
 
 class ExplodingSprite;
 class TwoWayMultiSprite : public Drawable {

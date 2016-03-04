@@ -42,7 +42,7 @@ Manager::Manager() :
   sprites.push_back( new TwoWayMultiSprite("pet3") );
   sprites.push_back( new TwoWayMultiSprite("pet4") );
   
-  //sprites.push_back( new MultiSprite("spinstar") );
+  sprites.push_back( new MultiSprite("circle") );
   //sprites.push_back( new Sprite("star") );
   //sprites.push_back( new Sprite("greenorb") );
   viewport.setObjectToTrack(sprites[currentSprite]);

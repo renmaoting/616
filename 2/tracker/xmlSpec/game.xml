@@ -48,16 +48,6 @@
   <unused>0</unused>
 </font>
 
-<spinstar>
-  <file>images/star.png</file>
-  <startLoc x="120" y="140"/>
-  <frames>4</frames>
-  <frameInterval>20</frameInterval>
-  <speedX>200</speedX>
-  <speedY>100</speedY>
-  <transparency>true</transparency>
-</spinstar>
-
 <pet1>
   <file>images/pet1.png</file>
   <startLoc x="100" y="40"/>
@@ -78,6 +68,27 @@
     <velocity>40</velocity>
   </chunk>
 </pet1>
+
+<circle>
+  <file>images/circle.png</file>
+  <startLoc x="2100" y="350"/>
+
+  <frames>7</frames>
+  <frameInterval>520</frameInterval>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>500</width>
+  <height>500</height>
+  <speedX>0</speedX>
+  <speedY>0</speedY>
+  <transparency>true</transparency>
+  <chunk>
+    <size>9</size>
+    <distance>200</distance>
+    <velocity>40</velocity>
+  </chunk>
+</circle>
 
 <pet2>
   <file>images/pet2.png</file>
