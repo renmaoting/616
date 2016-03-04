@@ -6,6 +6,7 @@
 #include "sprite.h"
 #include "gamedata.h"
 #include "manager.h"
+#include "hero.h"
 
 Manager::~Manager() { 
   // These deletions eliminate "definitely lost" and
@@ -37,14 +38,14 @@ Manager::Manager() :
   }
   SDL_WM_SetCaption(title.c_str(), NULL);
   atexit(SDL_Quit);
-  sprites.push_back( new TwoWayMultiSprite("pet2") );
+  sprites.push_back( new Hero("pet2") );
+  sprites.push_back( new Hero("pet4") );
   sprites.push_back( new TwoWayMultiSprite("pet1") );
   sprites.push_back( new TwoWayMultiSprite("pet3") );
-  sprites.push_back( new TwoWayMultiSprite("pet4") );
+  sprites.push_back( new Sprite("ufo") );
   
-  sprites.push_back( new MultiSprite("circle") );
-  //sprites.push_back( new Sprite("star") );
-  //sprites.push_back( new Sprite("greenorb") );
+  dynamic_cast<Hero*>(sprites[0])->addSpecialEffect(new MultiSprite("sp2"));
+  dynamic_cast<Hero*>(sprites[1])->addSpecialEffect(new MultiSprite("sp1"));
   viewport.setObjectToTrack(sprites[currentSprite]);
 }
 
@@ -58,7 +59,8 @@ void Manager::draw() const {
   io.printMessageValueAt("Seconds: ", clock.getSeconds(), 10, 20);
   io.printMessageValueAt("fps: ", clock.getAvgFps(), 10, 40);
   io.printMessageAt("Press T to switch sprites", 10, 70);
-  io.printMessageAt(title, 10, 450);
+  io.printMessageAt("Press E to explode sprites", 10, 100);
+  io.printMessageAt(title, 10, 750);
   viewport.draw();
 
   SDL_Flip(screen);

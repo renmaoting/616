@@ -9,6 +9,7 @@ public:
   MultiSprite(const std::string&);
   MultiSprite(const MultiSprite&);
   virtual ~MultiSprite() { } 
+  void advanceFrame(Uint32 ticks);
 
   virtual void draw() const;
   virtual void update(Uint32 ticks);
@@ -28,6 +29,5 @@ protected:
   int frameWidth;
   int frameHeight;
 
-  void advanceFrame(Uint32 ticks);
 };
 #endif

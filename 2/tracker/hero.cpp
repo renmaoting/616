@@ -1,4 +1,11 @@
-#include "twoWayMultiSprite.h"
+/*************************************************************************
+	> File Name: /home/ren/616/2/tracker/hero.c
+	> Author: Maoting Ren
+	> Mail: mren@g.clemson.edu
+	> Created Time: Fri 04 Mar 2016 05:25:14 AM EST
+ ************************************************************************/
+
+#include "hero.h"
 #include <cmath>
 #include <vector>
 #include "ioManager.h"
@@ -8,7 +15,12 @@
 #include <stdlib.h> 
 #include "explodingSprite.h"
 
-void TwoWayMultiSprite::advanceFrame(Uint32 ticks) {
+Hero::~Hero()
+{
+    if(special) delete special;
+}
+
+void Hero::advanceFrame(Uint32 ticks) {
 	timeSinceLastFrame += ticks;
 	if (timeSinceLastFrame > frameInterval) {
         if(right == false)
@@ -19,13 +31,15 @@ void TwoWayMultiSprite::advanceFrame(Uint32 ticks) {
 	}
 }
 
-TwoWayMultiSprite::TwoWayMultiSprite( const std::string& name) :
+Hero::Hero( const std::string& name) :
   Drawable(name, 
            Vector2f(Gamedata::getInstance().getXmlInt(name+"/startLoc/x") , 
                     Gamedata::getInstance().getXmlInt(name+"/startLoc/y") ), 
            Vector2f(Gamedata::getInstance().getXmlInt(name+"/speedX") ,
                     Gamedata::getInstance().getXmlInt(name+"/speedY") )
            ),
+  explosion(NULL),
+  special(NULL),
   frames( FrameFactory::getInstance().getFrames2(name)),
   starFrames(),
   frameName(name),
@@ -42,13 +56,39 @@ TwoWayMultiSprite::TwoWayMultiSprite( const std::string& name) :
 { 
 }
 
-void TwoWayMultiSprite::draw() const { 
+void Hero::explode() { 
+  if ( explosion ) return;
+  Sprite sprite(getName(), getPosition(), getVelocity(), getFrame());
+  explosion = new ExplodingSprite(sprite); 
+}
+
+void Hero::draw() const { 
+  if (explosion) {
+    explosion->draw();
+    return;
+  }
+  if(special != NULL)
+    special->draw();
   Uint32 x = static_cast<Uint32>(X());
   Uint32 y = static_cast<Uint32>(Y());
   frames[currentFrame]->draw(x, y);
 }
 
-void TwoWayMultiSprite::update(Uint32 ticks) { 
+void Hero::update(Uint32 ticks) { 
+  if ( explosion ) {
+    explosion->update(ticks);
+    if ( explosion->chunkCount() == 0 ) {
+      delete explosion;
+      explosion = NULL;
+    }
+    return;
+  }
+
+  if(special != NULL)
+  {
+    special->advanceFrame(ticks);
+    special->setPosition(this->getPosition()-Vector2f(20,50));
+  }
   advanceFrame(ticks);
   Vector2f incr = getVelocity() * static_cast<float>(ticks) * 0.001;
   setPosition(getPosition() + incr);
@@ -69,3 +109,12 @@ void TwoWayMultiSprite::update(Uint32 ticks) {
   }  
 }
 
+int Hero::getDistance(const Hero *obj) const { 
+  return hypot(X()-obj->X(), Y()-obj->Y());
+}
+
+void Hero::addSpecialEffect(MultiSprite* sprite)
+{
+    special = sprite;
+    special->setPosition(this->getPosition());
+}

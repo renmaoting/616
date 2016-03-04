@@ -41,8 +41,8 @@
 
 <font name="font">
   <file>font/dyslexic-bold.otf</file>
-  <size>16</size>
-  <red>0</red>
+  <size>20</size>
+  <red>200</red>
   <green>0</green>
   <blue>0</blue>
   <unused>0</unused>
@@ -69,12 +69,14 @@
   </chunk>
 </pet1>
 
-<circle>
-  <file>images/circle.png</file>
-  <startLoc x="2100" y="350"/>
+<sp1>
+  <file>images/sp1.png</file>
+  <startLoc x="210" y="350"/>
 
-  <frames>7</frames>
-  <frameInterval>520</frameInterval>
+  <frames>16</frames>
+  <frameInterval>120</frameInterval>
+  <row>4</row>
+  <col>5</col>
 
   <srcX>0</srcX>
   <srcY>0</srcY>
@@ -83,12 +85,80 @@
   <speedX>0</speedX>
   <speedY>0</speedY>
   <transparency>true</transparency>
-  <chunk>
-    <size>9</size>
-    <distance>200</distance>
-    <velocity>40</velocity>
-  </chunk>
-</circle>
+</sp1>
+
+<sp2>
+  <file>images/sp2.png</file>
+  <startLoc x="210" y="350"/>
+
+  <frames>18</frames>
+  <frameInterval>120</frameInterval>
+  <row>4</row>
+  <col>5</col>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>500</width>
+  <height>500</height>
+  <speedX>0</speedX>
+  <speedY>0</speedY>
+  <transparency>true</transparency>
+</sp2>
+
+<sp3>
+  <file>images/sp3.png</file>
+  <startLoc x="210" y="350"/>
+
+  <frames>19</frames>
+  <frameInterval>120</frameInterval>
+  <row>4</row>
+  <col>5</col>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>500</width>
+  <height>500</height>
+  <speedX>0</speedX>
+  <speedY>0</speedY>
+  <transparency>true</transparency>
+</sp3>
+
+<sp4>
+  <file>images/sp4.png</file>
+  <startLoc x="210" y="350"/>
+
+  <frames>29</frames>
+  <frameInterval>120</frameInterval>
+  <row>6</row>
+  <col>5</col>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>500</width>
+  <height>500</height>
+  <speedX>0</speedX>
+  <speedY>0</speedY>
+  <transparency>true</transparency>
+</sp4>
+
+<sp5>
+  <file>images/sp5.png</file>
+  <startLoc x="210" y="350"/>
+
+  <frames>20</frames>
+  <frameInterval>120</frameInterval>
+  <row>4</row>
+  <col>5</col>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>500</width>
+  <height>500</height>
+  <speedX>0</speedX>
+  <speedY>0</speedY>
+  <transparency>true</transparency>
+</sp5>
+
 
 <pet2>
   <file>images/pet2.png</file>
@@ -152,6 +222,15 @@
     <velocity>40</velocity>
   </chunk>
 </pet4>
+
+<ufo>
+  <file>images/ufo.png</file>
+  <startLoc x="320" y="240"/>
+  <speedX>-175</speedX>
+  <speedY>-175</speedY>
+  <transparency>true</transparency>
+</ufo>
+
 
 <star>
   <file>images/yellowstar32.png</file>
