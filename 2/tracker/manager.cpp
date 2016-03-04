@@ -2,7 +2,7 @@
 #include <string>
 #include <iomanip>
 #include "multisprite.h"
-#include "twoWayMultisprite.h"
+#include "twoWayMultiSprite.h"
 #include "sprite.h"
 #include "gamedata.h"
 #include "manager.h"
@@ -37,9 +37,14 @@ Manager::Manager() :
   }
   SDL_WM_SetCaption(title.c_str(), NULL);
   atexit(SDL_Quit);
-  sprites.push_back( new MultiSprite("spinstar") );
-  sprites.push_back( new Sprite("star") );
-  sprites.push_back( new Sprite("greenorb") );
+  sprites.push_back( new TwoWayMultiSprite("pet2") );
+  sprites.push_back( new TwoWayMultiSprite("pet1") );
+  sprites.push_back( new TwoWayMultiSprite("pet3") );
+  sprites.push_back( new TwoWayMultiSprite("pet4") );
+  
+  //sprites.push_back( new MultiSprite("spinstar") );
+  //sprites.push_back( new Sprite("star") );
+  //sprites.push_back( new Sprite("greenorb") );
   viewport.setObjectToTrack(sprites[currentSprite]);
 }
 
@@ -107,6 +112,9 @@ void Manager::play() {
         if (keystate[SDLK_ESCAPE] || keystate[SDLK_q]) {
           done = true;
           break;
+        }
+        if ( keystate[SDLK_e] ) {
+            sprites[currentSprite]->explode();
         }
         if ( keystate[SDLK_t] ) {
           switchSprite();

@@ -12,7 +12,7 @@
 <username>malloy</username>
 
 <world>
-    <width>2800</width>
+    <width>2500</width>
     <height>800</height>
 </world>
 
@@ -22,7 +22,7 @@
 </view>
 
 <back>
-  <file>images/b_bg.jpg</file>
+  <file>images/b_bg3.png</file>
   <red>193</red>
   <green>205</green>
   <blue>205</blue>
@@ -31,7 +31,7 @@
 </back>
 
 <back2>
-  <file>images/bg.png</file>
+  <file>images/bg3.png</file>
   <red>193</red>
   <green>205</green>
   <blue>205</blue>
@@ -53,26 +53,94 @@
   <startLoc x="120" y="140"/>
   <frames>4</frames>
   <frameInterval>20</frameInterval>
-  <speedX>-200</speedX>
-  <speedY>200</speedY>
+  <speedX>200</speedX>
+  <speedY>100</speedY>
   <transparency>true</transparency>
 </spinstar>
 
-<fish4>
-  <file>images/fish4m.png</file>
-  <startLoc x="520" y="40"/>
+<pet1>
+  <file>images/pet1.png</file>
+  <startLoc x="100" y="40"/>
 
-  <frames>16</frames>
+  <frames>8</frames>
   <frameInterval>150</frameInterval>
 
   <srcX>0</srcX>
   <srcY>0</srcY>
   <width>77</width>
   <height>59</height>
-  <speedX>150</speedX>
-  <speedY>150</speedY>
+  <speedX>300</speedX>
+  <speedY>70</speedY>
   <transparency>true</transparency>
-</fish4>
+  <chunk>
+    <size>30</size>
+    <distance>200</distance>
+    <velocity>40</velocity>
+  </chunk>
+</pet1>
+
+<pet2>
+  <file>images/pet2.png</file>
+  <startLoc x="520" y="40"/>
+
+  <frames>8</frames>
+  <frameInterval>150</frameInterval>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>77</width>
+  <height>59</height>
+  <speedX>-200</speedX>
+  <speedY>40</speedY>
+  <transparency>true</transparency>
+  <chunk>
+    <size>30</size>
+    <distance>200</distance>
+    <velocity>40</velocity>
+  </chunk>
+</pet2>
+
+<pet3>
+  <file>images/pet3.png</file>
+  <startLoc x="100" y="40"/>
+
+  <frames>8</frames>
+  <frameInterval>150</frameInterval>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>77</width>
+  <height>59</height>
+  <speedX>-250</speedX>
+  <speedY>50</speedY>
+  <transparency>true</transparency>
+  <chunk>
+    <size>30</size>
+    <distance>200</distance>
+    <velocity>40</velocity>
+  </chunk>
+</pet3>
+
+<pet4>
+  <file>images/pet4.png</file>
+  <startLoc x="500" y="540"/>
+
+  <frames>8</frames>
+  <frameInterval>150</frameInterval>
+
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>77</width>
+  <height>59</height>
+  <speedX>-150</speedX>
+  <speedY>0</speedY>
+  <transparency>true</transparency>
+  <chunk>
+    <size>30</size>
+    <distance>200</distance>
+    <velocity>40</velocity>
+  </chunk>
+</pet4>
 
 <star>
   <file>images/yellowstar32.png</file>
