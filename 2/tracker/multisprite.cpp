@@ -5,7 +5,7 @@
 void MultiSprite::advanceFrame(Uint32 ticks) {
 	timeSinceLastFrame += ticks;
 	if (timeSinceLastFrame > frameInterval) {
-    currentFrame = (currentFrame+1) % numberOfFrames;
+        currentFrame = (currentFrame+1) % numberOfFrames;
 		timeSinceLastFrame = 0;
 	}
 }

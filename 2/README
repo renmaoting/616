@@ -1,0 +1,23 @@
+Name:Maoting Ren
+Clemson Email Address:mren@g.clemson.edu
+
+Project no:2
+Project due date:8 AM on Friday, March 4 th , 2016
+
+Project description: 
+1. I print my name and the title of my animation in the lower left corner of the screen.
+2. Put the global constants WORLD WIDTH and WORLD HEIGHT into xml file game.xml
+3. Convert GoF's singleton to the Meyer’s singleton
+4. Write an overloaded assignment operator for class Sprite
+5. Incorporate parallax scrolling into the animation by using at least two backgrounds.
+6. Extend the Clock class so that the animation can be paused with the p key.
+7. Convert printMessageValueAt to use the Inclusion Model to manage instantiation.
+8. Convert the current tracker framework into a meaningful animation
+9. I created a TwoWayMultiSprite class and Hero class. For TwoWayMultiSprite, it can travel in two direction.
+   And for Hero class, it can explode and be add a special effect, you can see it in my game. So I add three
+   types of sprites in the vector. When you press T key, you can switch the sprite you tracked. And when you 
+   press E, if you are tracking a Hero instance, it will be explode. 
+
+10. I have checked, there are no memory leak.
+
+My contribution: all
