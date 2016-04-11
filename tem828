@@ -1,0 +1,82 @@
+Facility Jonah_Queue_User_Facility;
+    uses Integer_Template, String_Theory;
+    
+    Operation Fill_Queue(replaces Q: Queue);
+        ensures |Q| = 5;
+     --   ensures #input = input o Q;
+        Procedure
+
+    end Fill_Queue;
+
+    Operation Write_Queue(restores Q: Queue);
+    --    ensures output = #output o Q;
+        Procedure
+
+    end Write_Queue;
+
+    Operation Combine(updates P: Queue; alters E: Char_Str; clears Q: Queue);
+        requires |P| + 1 + |Q| <= 3;
+        ensures P = #P o <#E> o #Q;
+        Procedure
+
+    end Combine;
+
+    Operation Rotate(updates Q: Queue);
+    -- You need to write the formal specification.
+    -- It moves the front-most entry to the end
+    -- Hint: use Prt_Btwn.
+        Procedure
+
+    end Rotate;
+
+    Operation Are_Equal_Queues(restores P, Q: Queue): Boolean;
+        ensures Are_Equal_Queues = (P = Q);
+        Procedure
+            Var Temp1, Temp2;
+            
+            Temp1 := Prt_Btwn(0, 1, #P);
+            Temp2 := Prt_Btwn(0, 1, #Q);
+            
+
+    end Are_Equal_Queues;
+
+    Operation Is_Present(restores E: Char_Str; restores Q: Queue): Boolean;
+        ensures Is_Present = Is_Substring(<E>, Q);
+        Procedure
+            Var Temp1: Char_Str;
+            Var Temp2: Integer;
+            Temp2 := 0;
+            Temp1 = Prt_Btwn(Temp2, Temp2+1, #Q);
+            while(Temp1 != E)
+                ensures Temp2 < |Q|;
+            do
+                Temp2 := Temp2+1;
+                Temp1 = Prt_Btwn(Temp2, Temp2+1, #Q);
+            if(Temp2 = |Q|) then
+                Is_Present = true; 
+            else
+                Is_Present = false;
+            end;
+    end Is_Present;
+
+-- An example procedure for operation Main is given below
+    Operation Main();
+    Procedure
+        Var Q, R: Queue;
+        Var Temp, Key: Char_Str;
+
+        Fill_Queue(Q);
+--        Fill_Queue(R); -- what happens if you uncomment? Why?
+        If (not Are_Equal_Queues(Q, R)) then
+            Write_Line("Input Queues are different.");
+        end;
+        Dequeue(Temp, Q);
+        Key := Temp;
+        Combine(Q, Temp, R);
+        Rotate(Q);
+        Write_Queue(Q);
+        If (Is_Present(Key, Q)) then
+            Write_Line("Present");
+        end;
+    end Main; 
+end Jonah_Queue_User_Facility;
